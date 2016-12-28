@@ -1,0 +1,6 @@
+framework module Pods_qudingxiang_swift {
+  umbrella header "Pods-qudingxiang-swift-umbrella.h"
+
+  export *
+  module * { export * }
+}
