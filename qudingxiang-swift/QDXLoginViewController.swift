@@ -12,17 +12,12 @@ import SnapKit
 class QDXLoginViewController: UIViewController {
     
     lazy var box = UIView()
+    
+    lazy var telText = UITextField()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        self.view.addSubview(box)
-        box.backgroundColor = UIColor.black
-        box.snp.makeConstraints { (make) -> Void in
-            make.width.height.equalTo(50)
-            make.center.equalTo(self.view)
-        }
         
         setUpUI()
     }
@@ -37,7 +32,12 @@ class QDXLoginViewController: UIViewController {
         self.view.backgroundColor = UIColor.init(displayP3Red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0)
         self.navigationItem.title = "登录"
         
-        
+        self.view.addSubview(box)
+        box.backgroundColor = UIColor.black
+        box.snp.makeConstraints { (make) -> Void in
+            make.width.height.equalTo(50)
+            make.center.equalTo(self.view)
+        }
     }
 }
 
