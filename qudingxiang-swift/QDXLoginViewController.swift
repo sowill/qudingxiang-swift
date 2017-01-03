@@ -11,9 +11,11 @@ import SnapKit
 
 class QDXLoginViewController: UIViewController {
     
-    lazy var box = UIView()
-    
-    lazy var telText = UITextField()
+    lazy var usernameTF =  UITextField()
+    lazy var usernameLB = UILabel()
+    lazy var passwordTF = UITextField()
+    lazy var passwordLB = UILabel()
+    lazy var loginButton = UIButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,12 +34,27 @@ class QDXLoginViewController: UIViewController {
         self.view.backgroundColor = UIColor.init(displayP3Red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0)
         self.navigationItem.title = "登录"
         
-        self.view.addSubview(box)
-        box.backgroundColor = UIColor.black
-        box.snp.makeConstraints { (make) -> Void in
-            make.width.height.equalTo(50)
-            make.center.equalTo(self.view)
+        self.view.addSubview(usernameTF)
+        usernameTF.borderStyle = UITextBorderStyle.roundedRect
+        usernameTF.snp.makeConstraints { (make) -> Void in
+            make.centerX.equalTo(self.view)
+            make.centerY.equalTo(40)
+            make.height.equalTo(40)
+            make.left.equalTo(20)
         }
+        self.view.addSubview(usernameLB)
+        usernameLB.text = "用户名必须是5-10位"
+        usernameLB.textColor = UIColor.red
+        usernameLB.font = UIFont.boldSystemFont(ofSize: 13)
+        usernameLB.snp.makeConstraints { (make) -> Void in
+            make.left.equalTo(20)
+            make.top.equalTo(usernameTF).offset(50)
+        }
+        
+        self.view.addSubview(passwordTF)
+        self.view.addSubview(passwordLB)
+        self.view.addSubview(loginButton)
+
     }
 }
 

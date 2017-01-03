@@ -10,11 +10,11 @@
 		1C7295B746DA2D69D8405283 /* Pods_qudingxiang_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223184EFABED1939857D6CB0 /* Pods_qudingxiang_swift.framework */; };
 		457F50891E138C6F00F2AA34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457F50881E138C6F00F2AA34 /* AppDelegate.swift */; };
 		457F508B1E138C6F00F2AA34 /* QDXLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457F508A1E138C6F00F2AA34 /* QDXLoginViewController.swift */; };
-		457F508E1E138C6F00F2AA34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 457F508C1E138C6F00F2AA34 /* Main.storyboard */; };
 		457F50901E138C6F00F2AA34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 457F508F1E138C6F00F2AA34 /* Assets.xcassets */; };
 		457F50931E138C6F00F2AA34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 457F50911E138C6F00F2AA34 /* LaunchScreen.storyboard */; };
 		457F509B1E138E7200F2AA34 /* QDXNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457F509A1E138E7200F2AA34 /* QDXNavigationViewController.swift */; };
 		457F509D1E13952700F2AA34 /* QDXTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457F509C1E13952700F2AA34 /* QDXTabBarViewController.swift */; };
+		45A2BDB71E1508B400BDE536 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45A2BDB51E1508B400BDE536 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,12 +23,12 @@
 		457F50851E138C6F00F2AA34 /* qudingxiang-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "qudingxiang-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		457F50881E138C6F00F2AA34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		457F508A1E138C6F00F2AA34 /* QDXLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QDXLoginViewController.swift; sourceTree = "<group>"; };
-		457F508D1E138C6F00F2AA34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		457F508F1E138C6F00F2AA34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		457F50921E138C6F00F2AA34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		457F50941E138C6F00F2AA34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		457F509A1E138E7200F2AA34 /* QDXNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QDXNavigationViewController.swift; sourceTree = "<group>"; };
 		457F509C1E13952700F2AA34 /* QDXTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QDXTabBarViewController.swift; sourceTree = "<group>"; };
+		45A2BDB61E1508B400BDE536 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FDD3DE0861E2A26816AE6C10 /* Pods-qudingxiang-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-qudingxiang-swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-qudingxiang-swift/Pods-qudingxiang-swift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,8 +69,8 @@
 				457F508A1E138C6F00F2AA34 /* QDXLoginViewController.swift */,
 				457F509A1E138E7200F2AA34 /* QDXNavigationViewController.swift */,
 				457F509C1E13952700F2AA34 /* QDXTabBarViewController.swift */,
-				457F508C1E138C6F00F2AA34 /* Main.storyboard */,
 				457F508F1E138C6F00F2AA34 /* Assets.xcassets */,
+				45A2BDB51E1508B400BDE536 /* Main.storyboard */,
 				457F50911E138C6F00F2AA34 /* LaunchScreen.storyboard */,
 				457F50941E138C6F00F2AA34 /* Info.plist */,
 			);
@@ -157,9 +157,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45A2BDB71E1508B400BDE536 /* Main.storyboard in Resources */,
 				457F50931E138C6F00F2AA34 /* LaunchScreen.storyboard in Resources */,
 				457F50901E138C6F00F2AA34 /* Assets.xcassets in Resources */,
-				457F508E1E138C6F00F2AA34 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,20 +228,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		457F508C1E138C6F00F2AA34 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				457F508D1E138C6F00F2AA34 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		457F50911E138C6F00F2AA34 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				457F50921E138C6F00F2AA34 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		45A2BDB51E1508B400BDE536 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45A2BDB61E1508B400BDE536 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

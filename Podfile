@@ -6,4 +6,7 @@ target 'qudingxiang-swift' do
     pod 'SnapKit', '~> 3.1.2'
     pod 'Alamofire', '~> 4.0'
     pod 'SwiftyJSON'
+    pod 'RxSwift', '~> 3.0'
+    pod 'RxCocoa', '~> 3.0'
+    pod 'RxDataSources', '~> 1.0'
 end

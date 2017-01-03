@@ -73,7 +73,7 @@ class QDXNavigationViewController: UINavigationController ,UINavigationControlle
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         
         // 根据子控制个数来判断什么时候执行返回手势
-        print(self.childViewControllers.count)
+        print(String(self.childViewControllers.count) + " left drag")
         return self.childViewControllers.count > 1
         
     }
