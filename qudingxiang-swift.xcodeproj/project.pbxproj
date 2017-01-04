@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1C7295B746DA2D69D8405283 /* Pods_qudingxiang_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223184EFABED1939857D6CB0 /* Pods_qudingxiang_swift.framework */; };
+		4543C0581E1CCDC800182E6B /* constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4543C0571E1CCDC800182E6B /* constant.swift */; };
 		457F50891E138C6F00F2AA34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457F50881E138C6F00F2AA34 /* AppDelegate.swift */; };
 		457F508B1E138C6F00F2AA34 /* QDXLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457F508A1E138C6F00F2AA34 /* QDXLoginViewController.swift */; };
 		457F50901E138C6F00F2AA34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 457F508F1E138C6F00F2AA34 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		16CC2834EDAD83BF7F8AE79D /* Pods-qudingxiang-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-qudingxiang-swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-qudingxiang-swift/Pods-qudingxiang-swift.release.xcconfig"; sourceTree = "<group>"; };
 		223184EFABED1939857D6CB0 /* Pods_qudingxiang_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_qudingxiang_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4543C0571E1CCDC800182E6B /* constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = constant.swift; sourceTree = "<group>"; };
 		457F50851E138C6F00F2AA34 /* qudingxiang-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "qudingxiang-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		457F50881E138C6F00F2AA34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		457F508A1E138C6F00F2AA34 /* QDXLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QDXLoginViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				45A2BDB51E1508B400BDE536 /* Main.storyboard */,
 				457F50911E138C6F00F2AA34 /* LaunchScreen.storyboard */,
 				457F50941E138C6F00F2AA34 /* Info.plist */,
+				4543C0571E1CCDC800182E6B /* constant.swift */,
 			);
 			path = "qudingxiang-swift";
 			sourceTree = "<group>";
@@ -130,6 +133,7 @@
 					457F50841E138C6F00F2AA34 = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = X5T2295222;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -220,6 +224,7 @@
 			files = (
 				457F509D1E13952700F2AA34 /* QDXTabBarViewController.swift in Sources */,
 				457F508B1E138C6F00F2AA34 /* QDXLoginViewController.swift in Sources */,
+				4543C0581E1CCDC800182E6B /* constant.swift in Sources */,
 				457F50891E138C6F00F2AA34 /* AppDelegate.swift in Sources */,
 				457F509B1E138E7200F2AA34 /* QDXNavigationViewController.swift in Sources */,
 			);
@@ -343,11 +348,13 @@
 			baseConfigurationReference = FDD3DE0861E2A26816AE6C10 /* Pods-qudingxiang-swift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = X5T2295222;
 				INFOPLIST_FILE = "qudingxiang-swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.app.qudingxiang-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "${SRCROOT}/**";
 			};
@@ -358,6 +365,7 @@
 			baseConfigurationReference = 16CC2834EDAD83BF7F8AE79D /* Pods-qudingxiang-swift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = X5T2295222;
 				INFOPLIST_FILE = "qudingxiang-swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

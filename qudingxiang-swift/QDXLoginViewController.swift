@@ -12,19 +12,18 @@ import SnapKit
 class QDXLoginViewController: UIViewController {
     
     lazy var usernameTF =  UITextField()
-    lazy var usernameLB = UILabel()
+    lazy var usernameLine = UIView()
     lazy var passwordTF = UITextField()
-    lazy var passwordLB = UILabel()
+    lazy var passwordLine = UIView()
     lazy var loginButton = UIButton()
-    
+    lazy var forgetButton = UIButton()
+    lazy var registerButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         setUpUI()
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,44 +31,57 @@ class QDXLoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
     func setUpUI(){
-        self.view.backgroundColor = UIColor.init(displayP3Red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0)
+        self.view.backgroundColor = QDXBGColor
         self.navigationItem.title = "登录"
         
         self.view.addSubview(usernameTF)
-        usernameTF.borderStyle = UITextBorderStyle.roundedRect
+        usernameTF.borderStyle = UITextBorderStyle.none
+        usernameTF.backgroundColor = UIColor.white
+        usernameTF.placeholder = "请输入手机号:"
+        let usernamePaddingView = UIView(frame: CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(10), height: CGFloat(40)))
+        usernameTF.leftView = usernamePaddingView
+        usernameTF.leftViewMode = .always
+        usernameTF.keyboardType = .numberPad
         usernameTF.snp.makeConstraints { (make) -> Void in
             make.centerX.equalTo(self.view)
-            make.centerY.equalTo(40)
+            make.top.equalTo(10)
             make.height.equalTo(40)
-            make.left.equalTo(20)
+            make.left.equalTo(0)
         }
-        self.view.addSubview(usernameLB)
-        usernameLB.text = "用户名必须是5-10位"
-        usernameLB.textColor = UIColor.red
-        usernameLB.font = UIFont.boldSystemFont(ofSize: 13)
-        usernameLB.snp.makeConstraints { (make) -> Void in
-            make.left.equalTo(20)
-            make.top.equalTo(usernameTF).offset(50)
+        
+        self.view.addSubview(usernameLine)
+        usernameLine.backgroundColor = QDXLineColor
+        usernameLine.snp.makeConstraints { (make) -> Void in
+            make.centerX.equalTo(self.view)
+            make.top.equalTo(10 + 40)
+            make.height.equalTo(0.5)
+            make.left.equalTo(0)
         }
         
         self.view.addSubview(passwordTF)
-        passwordTF.borderStyle = UITextBorderStyle.roundedRect
+        passwordTF.borderStyle = UITextBorderStyle.none
+        passwordTF.backgroundColor = UIColor.white
+        passwordTF.placeholder = "请输入密码"
+        let passwordPaddingView = UIView(frame: CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(10), height: CGFloat(40)))
+        passwordTF.leftView = passwordPaddingView
+        passwordTF.leftViewMode = .always
+        passwordTF.clearButtonMode = .always
+        passwordTF.isSecureTextEntry = true
         passwordTF.snp.makeConstraints { (make) -> Void in
-            make.left.equalTo(20)
+            make.left.equalTo(0)
             make.centerX.equalTo(self.view)
             make.height.equalTo(40)
-            make.top.equalTo(usernameLB).offset(80)
+            make.top.equalTo(usernameLine).offset(0.5)
         }
         
-        self.view.addSubview(passwordLB)
-        passwordLB.text = "密码必须是5-16位"
-        passwordLB.textColor = UIColor.red
-        passwordLB.font = UIFont.boldSystemFont(ofSize: 13)
-        passwordLB.snp.makeConstraints { (make) -> Void in
-            make.left.equalTo(20)
-            make.top.equalTo(passwordTF).offset(50)
+        self.view.addSubview(passwordLine)
+        passwordLine.backgroundColor = QDXLineColor
+        passwordLine.snp.makeConstraints { (make) -> Void in
+            make.centerX.equalTo(self.view)
+            make.top.equalTo(passwordTF).offset(0.5 + 40)
+            make.height.equalTo(0.5)
+            make.left.equalTo(0)
         }
         
         self.view.addSubview(loginButton)
@@ -79,15 +91,43 @@ class QDXLoginViewController: UIViewController {
         loginButton.addTarget(self, action: #selector(loginClick), for: .touchUpInside)
         loginButton.snp.makeConstraints { (make) -> Void in
             make.centerX.equalTo(self.view)
-            make.left.equalTo(20)
-            make.top.equalTo(passwordLB).offset(50)
+            make.left.equalTo(10)
+            make.top.equalTo(passwordTF).offset(70)
             make.height.equalTo(40)
+        }
+        
+        self.view.addSubview(forgetButton)
+        forgetButton.setTitle("忘记密码", for: UIControlState.normal)
+        forgetButton.setTitleColor(QDXGray, for: UIControlState.normal)
+        forgetButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        forgetButton.addTarget(self, action: #selector(forgetClick), for: .touchUpInside)
+        forgetButton.snp.makeConstraints { (make) -> Void in
+            make.left.equalTo(10)
+            make.top.equalTo(loginButton).offset(40)
+        }
+        
+        self.view.addSubview(registerButton)
+        registerButton.setTitle("立即注册", for: UIControlState.normal)
+        registerButton.setTitleColor(QDXBlue, for: UIControlState.normal)
+        registerButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        registerButton.addTarget(self, action: #selector(registerClick), for: .touchUpInside)
+        registerButton.snp.makeConstraints { (make) -> Void in
+            make.right.equalTo(10)
+            make.top.equalTo(loginButton).offset(40)
         }
 
     }
     
     func loginClick(_ button: UIButton) -> Void {
-        print("button click")
+        print("login click")
+    }
+    
+    func forgetClick(_ button: UIButton) -> Void {
+        print("forget click")
+    }
+    
+    func registerClick(_ button: UIButton) -> Void {
+        print("register click")
     }
 }
 
