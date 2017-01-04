@@ -16,12 +16,20 @@ class QDXLoginViewController: UIViewController {
     lazy var passwordTF = UITextField()
     lazy var passwordLB = UILabel()
     lazy var loginButton = UIButton()
-
+    
+    let minUsernameLength = 5
+    let maxUsernameLength = 10
+    let minPasswordLength = 5
+    let maxPasswordLength = 16
+    let disposBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         setUpUI()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,9 +60,39 @@ class QDXLoginViewController: UIViewController {
         }
         
         self.view.addSubview(passwordTF)
+        passwordTF.borderStyle = UITextBorderStyle.roundedRect
+        passwordTF.snp.makeConstraints { (make) -> Void in
+            make.left.equalTo(20)
+            make.centerX.equalTo(self.view)
+            make.height.equalTo(40)
+            make.top.equalTo(usernameLB).offset(80)
+        }
+        
         self.view.addSubview(passwordLB)
+        passwordLB.text = "密码必须是5-16位"
+        passwordLB.textColor = UIColor.red
+        passwordLB.font = UIFont.boldSystemFont(ofSize: 13)
+        passwordLB.snp.makeConstraints { (make) -> Void in
+            make.left.equalTo(20)
+            make.top.equalTo(passwordTF).offset(50)
+        }
+        
         self.view.addSubview(loginButton)
+        loginButton.backgroundColor = UIColor.lightGray
+        loginButton.setTitle("登录", for: UIControlState.normal)
+        loginButton.setTitleColor(UIColor.white, for: UIControlState.normal)
+        loginButton.addTarget(self, action: #selector(loginClick), for: .touchUpInside)
+        loginButton.snp.makeConstraints { (make) -> Void in
+            make.centerX.equalTo(self.view)
+            make.left.equalTo(20)
+            make.top.equalTo(passwordLB).offset(50)
+            make.height.equalTo(40)
+        }
 
+    }
+    
+    func loginClick(_ button: UIButton) -> Void {
+        print("button click")
     }
 }
 
