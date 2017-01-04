@@ -17,11 +17,6 @@ class QDXLoginViewController: UIViewController {
     lazy var passwordLB = UILabel()
     lazy var loginButton = UIButton()
     
-    let minUsernameLength = 5
-    let maxUsernameLength = 10
-    let minPasswordLength = 5
-    let maxPasswordLength = 16
-    let disposBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
