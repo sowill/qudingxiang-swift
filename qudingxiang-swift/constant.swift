@@ -31,3 +31,8 @@ let QDXLineColor = UIColorFromRGB(rgbValue: 0xe5e5e5)
 let QDXDarkBlue = UIColorFromRGB(rgbValue: 0x0089e3)
 
 let QDXLightGray = UIColorFromRGB(rgbValue: 0xd6d6d6)
+
+/**
+ 服务器地址
+ */
+

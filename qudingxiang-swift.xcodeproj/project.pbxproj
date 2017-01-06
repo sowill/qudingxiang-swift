@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1C7295B746DA2D69D8405283 /* Pods_qudingxiang_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223184EFABED1939857D6CB0 /* Pods_qudingxiang_swift.framework */; };
 		4543C0581E1CCDC800182E6B /* constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4543C0571E1CCDC800182E6B /* constant.swift */; };
+		4555CD8A1E1E4AD700C7CE7F /* QDXUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4555CD891E1E4AD700C7CE7F /* QDXUserInfo.swift */; };
+		4555CD8C1E1E5C4500C7CE7F /* QDXConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4555CD8B1E1E5C4500C7CE7F /* QDXConnect.swift */; };
 		457F50891E138C6F00F2AA34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457F50881E138C6F00F2AA34 /* AppDelegate.swift */; };
 		457F508B1E138C6F00F2AA34 /* QDXLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457F508A1E138C6F00F2AA34 /* QDXLoginViewController.swift */; };
 		457F50901E138C6F00F2AA34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 457F508F1E138C6F00F2AA34 /* Assets.xcassets */; };
@@ -22,6 +24,8 @@
 		16CC2834EDAD83BF7F8AE79D /* Pods-qudingxiang-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-qudingxiang-swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-qudingxiang-swift/Pods-qudingxiang-swift.release.xcconfig"; sourceTree = "<group>"; };
 		223184EFABED1939857D6CB0 /* Pods_qudingxiang_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_qudingxiang_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4543C0571E1CCDC800182E6B /* constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = constant.swift; sourceTree = "<group>"; };
+		4555CD891E1E4AD700C7CE7F /* QDXUserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QDXUserInfo.swift; sourceTree = "<group>"; };
+		4555CD8B1E1E5C4500C7CE7F /* QDXConnect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QDXConnect.swift; sourceTree = "<group>"; };
 		457F50851E138C6F00F2AA34 /* qudingxiang-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "qudingxiang-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		457F50881E138C6F00F2AA34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		457F508A1E138C6F00F2AA34 /* QDXLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QDXLoginViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +80,8 @@
 				457F50911E138C6F00F2AA34 /* LaunchScreen.storyboard */,
 				457F50941E138C6F00F2AA34 /* Info.plist */,
 				4543C0571E1CCDC800182E6B /* constant.swift */,
+				4555CD891E1E4AD700C7CE7F /* QDXUserInfo.swift */,
+				4555CD8B1E1E5C4500C7CE7F /* QDXConnect.swift */,
 			);
 			path = "qudingxiang-swift";
 			sourceTree = "<group>";
@@ -224,8 +230,10 @@
 			files = (
 				457F509D1E13952700F2AA34 /* QDXTabBarViewController.swift in Sources */,
 				457F508B1E138C6F00F2AA34 /* QDXLoginViewController.swift in Sources */,
+				4555CD8C1E1E5C4500C7CE7F /* QDXConnect.swift in Sources */,
 				4543C0581E1CCDC800182E6B /* constant.swift in Sources */,
 				457F50891E138C6F00F2AA34 /* AppDelegate.swift in Sources */,
+				4555CD8A1E1E4AD700C7CE7F /* QDXUserInfo.swift in Sources */,
 				457F509B1E138E7200F2AA34 /* QDXNavigationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

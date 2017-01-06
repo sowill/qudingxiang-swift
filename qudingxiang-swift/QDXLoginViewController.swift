@@ -8,6 +8,9 @@
 
 import UIKit
 import SnapKit
+import Alamofire
+import SwiftyJSON
+import MJExtension
 
 class QDXLoginViewController: UIViewController {
     
@@ -102,7 +105,7 @@ class QDXLoginViewController: UIViewController {
         forgetButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         forgetButton.addTarget(self, action: #selector(forgetClick), for: .touchUpInside)
         forgetButton.snp.makeConstraints { (make) -> Void in
-            make.left.equalTo(10)
+            make.left.equalTo(loginButton)
             make.top.equalTo(loginButton).offset(40)
         }
         
@@ -112,22 +115,36 @@ class QDXLoginViewController: UIViewController {
         registerButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         registerButton.addTarget(self, action: #selector(registerClick), for: .touchUpInside)
         registerButton.snp.makeConstraints { (make) -> Void in
-            make.right.equalTo(10)
+            make.right.equalTo(loginButton)
             make.top.equalTo(loginButton).offset(40)
         }
 
     }
     
     func loginClick(_ button: UIButton) -> Void {
-        print("login click")
+        let code = usernameTF.text!
+        let password = passwordTF.text!
+        
+        let parameters: Parameters = ["code" : code,"password" : password]
+        let urlString = "https://www.qudingxiang.cn/index.php/Home/Customer/login"
+        
+        Alamofire.request(urlString, method: .post, parameters: parameters).responseJSON { (response) in
+            let json = JSON(response.result.value!)
+            
+            print(json["Msg"])
+            
+            let userInfo = QDXUserInfo.mj_object(withKeyValues: json["Msg"])
+            
+            print(userInfo?.token)
+        }
     }
     
     func forgetClick(_ button: UIButton) -> Void {
-        print("forget click")
+        
     }
     
     func registerClick(_ button: UIButton) -> Void {
-        print("register click")
+        
     }
 }
 

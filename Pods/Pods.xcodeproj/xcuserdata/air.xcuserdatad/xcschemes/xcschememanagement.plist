@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MJExtension.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-qudingxiang-swift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,7 +32,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>87021564697DDE5ED5ABE64F54B31C4B</key>
+		<key>5AA17C95E926B760FD08E0B487DAEFA2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8770CE86B11C42EF1AD8628ACEFF71ED</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -37,12 +47,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B067D9F4F9D310D57B98503DC7AC095B</key>
+		<key>AE02E7930A925FFBEF56C7EAF0C33712</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B828B8F6D5284A228A5C735459F46097</key>
+		<key>D4E72A5A87F5582B3F021D282E49445C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
