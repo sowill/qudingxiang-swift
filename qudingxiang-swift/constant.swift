@@ -35,4 +35,8 @@ let QDXLightGray = UIColorFromRGB(rgbValue: 0xd6d6d6)
 /**
  服务器地址
  */
-
+let QDXHOSTURL = "https://www.qudingxiang.cn/index.php/"
+/**
+ 登录地址
+ */
+let QDXLOGINURL = "Home/Customer/login"

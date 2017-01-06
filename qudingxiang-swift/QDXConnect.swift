@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import HandyJSON
 
-class QDXConnect: NSObject {
-    var Code:Int!
-    
+class QDXConnect: HandyJSON {
+    var Code : Int!
+    var Msg : String!
+
+    required init(){}
 }
