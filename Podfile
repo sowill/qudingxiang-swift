@@ -7,7 +7,7 @@ target 'qudingxiang-swift' do
     pod 'Alamofire', '~> 4.0'
     pod 'HandyJSON', '~> 1.4.0'
 #    pod 'SVProgressHUD'
-#    pod 'SwiftyJSON'
+    pod 'SwiftyJSON'
 #    pod 'RxSwift', '~> 3.0'
 #    pod 'RxCocoa', '~> 3.0'
 #    pod 'RxDataSources', '~> 1.0'

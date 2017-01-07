@@ -9,6 +9,7 @@
 import UIKit
 import SnapKit
 import Alamofire
+import SwiftyJSON
 import HandyJSON
 
 class QDXLoginViewController: UIViewController {
@@ -135,25 +136,29 @@ class QDXLoginViewController: UIViewController {
         let urlString = QDXHOSTURL + QDXLOGINURL
         
         Alamofire.request(urlString, method: .post, parameters: parameters).responseJSON { (response) in
-            
-            guard let JSON = response.result.value else {
-                _ = SweetAlert().showAlert("network error!", subTitle: "please check your network!", style: AlertStyle.error, buttonTitle:"Cancel")
-                return
-            }
-            guard let connect = JSONDeserializer<QDXConnect>.deserializeFrom(dict: JSON as? NSDictionary) else {
-                return
-            }
-            
-            if connect.Code == 0 {
-                _ = SweetAlert().showAlert("failed login!", subTitle: connect.Msg, style: AlertStyle.error, buttonTitle:"Cancel")
+            switch response.result{
+            case .success(let value):
+                let swiftyJsonVar = JSON(value)
                 
-            }else{
-                
-                guard let userInfo = JSONDeserializer<QDXUserInfo>.deserializeFrom(json: connect.Msg) else {
+                guard let connect = JSONDeserializer<QDXConnect>.deserializeFrom(json: swiftyJsonVar.description) else {
                     return
                 }
+                if connect.Code == 0 {
+                    _ = SweetAlert().showAlert("failed login!", subTitle: connect.Msg, style: AlertStyle.error, buttonTitle:"Cancel")
+    
+                }else{
+
+                    guard let userInfo = JSONDeserializer<QDXUserInfo>.deserializeFrom(json: swiftyJsonVar["Msg"].description) else {
+                        return
+                    }
+                    
+                    print(userInfo.cdate)
+                }
                 
-                print(userInfo.cdate)
+            case .failure(let error):
+                _ = SweetAlert().showAlert("network error!", subTitle: "please check your network!", style: AlertStyle.error, buttonTitle:"Cancel")
+                
+                print(error)
             }
         }
     }
