@@ -12,9 +12,9 @@ import Alamofire
 import SwiftyJSON
 import HandyJSON
 
-class QDXLoginViewController: UIViewController {
+class QDXLoginViewController: QDXBaseViewController {
     
-    lazy var usernameTF =  UITextField()
+    lazy var usernameTF = UITextField()
     lazy var usernameLine = UIView()
     lazy var passwordTF = UITextField()
     lazy var passwordLine = UIView()
@@ -35,7 +35,6 @@ class QDXLoginViewController: UIViewController {
     }
 
     func setUpUI(){
-        self.view.backgroundColor = QDXBGColor
         self.navigationItem.title = "登录"
         
         self.view.addSubview(usernameTF)
@@ -65,7 +64,7 @@ class QDXLoginViewController: UIViewController {
         self.view.addSubview(passwordTF)
         passwordTF.borderStyle = UITextBorderStyle.none
         passwordTF.backgroundColor = UIColor.white
-        passwordTF.placeholder = "请输入密码"
+        passwordTF.placeholder = "请输入密码:"
         let passwordPaddingView = UIView(frame: CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(10), height: CGFloat(40)))
         passwordTF.leftView = passwordPaddingView
         passwordTF.leftViewMode = .always
@@ -89,8 +88,8 @@ class QDXLoginViewController: UIViewController {
         
         self.view.addSubview(loginButton)
         loginButton.backgroundColor = UIColor.lightGray
-        loginButton.setTitle("登录", for: UIControlState.normal)
-        loginButton.setTitleColor(UIColor.white, for: UIControlState.normal)
+        loginButton.setTitle("登录", for: .normal)
+        loginButton.setTitleColor(UIColor.white, for: .normal)
         loginButton.addTarget(self, action: #selector(loginClick), for: .touchUpInside)
         loginButton.snp.makeConstraints { (make) -> Void in
             make.centerX.equalTo(self.view)
@@ -100,24 +99,28 @@ class QDXLoginViewController: UIViewController {
         }
         
         self.view.addSubview(forgetButton)
-        forgetButton.setTitle("忘记密码", for: UIControlState.normal)
-        forgetButton.setTitleColor(QDXGray, for: UIControlState.normal)
+        forgetButton.setTitle("忘记密码", for: .normal)
+        forgetButton.setTitleColor(QDXGray, for: .normal)
+        forgetButton.tag = 1
         forgetButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        forgetButton.addTarget(self, action: #selector(forgetClick), for: .touchUpInside)
+        forgetButton.addTarget(self, action: #selector(requireVcodeClick), for: .touchUpInside)
         forgetButton.snp.makeConstraints { (make) -> Void in
             make.left.equalTo(loginButton)
             make.top.equalTo(loginButton).offset(40)
         }
         
         self.view.addSubview(registerButton)
-        registerButton.setTitle("立即注册", for: UIControlState.normal)
-        registerButton.setTitleColor(QDXBlue, for: UIControlState.normal)
+        registerButton.setTitle("立即注册", for: .normal)
+        registerButton.setTitleColor(QDXBlue, for: .normal)
+        registerButton.tag = 2
         registerButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        registerButton.addTarget(self, action: #selector(registerClick), for: .touchUpInside)
+        registerButton.addTarget(self, action: #selector(requireVcodeClick), for: .touchUpInside)
         registerButton.snp.makeConstraints { (make) -> Void in
             make.right.equalTo(loginButton)
             make.top.equalTo(loginButton).offset(40)
         }
+        
+        //第三方登录
 
     }
     
@@ -128,11 +131,9 @@ class QDXLoginViewController: UIViewController {
     func loginClick(_ button: UIButton) -> Void {
         
         self.view.endEditing(false)
+        loginButton.isUserInteractionEnabled = false
         
-        let code = usernameTF.text!
-        let password = passwordTF.text!
-        
-        let parameters: Parameters = ["code" : code,"password" : password]
+        let parameters: Parameters = ["code" : usernameTF.text!,"password" : passwordTF.text!]
         let urlString = QDXHOSTURL + QDXLOGINURL
         
         Alamofire.request(urlString, method: .post, parameters: parameters).responseJSON { (response) in
@@ -152,8 +153,15 @@ class QDXLoginViewController: UIViewController {
                         return
                     }
                     
-                    print(userInfo.cdate)
+                    print(userInfo.customer_name + " " + userInfo.vcode)
+                    
+                    let homeVC = QDXHomeViewController()
+                    
+                    self.navigationController?.pushViewController(homeVC, animated: true)
+                    
                 }
+                
+                self.loginButton.isUserInteractionEnabled = true
                 
             case .failure(let error):
                 _ = SweetAlert().showAlert("network error!", subTitle: "please check your network!", style: AlertStyle.error, buttonTitle:"Cancel")
@@ -163,12 +171,15 @@ class QDXLoginViewController: UIViewController {
         }
     }
     
-    func forgetClick(_ button: UIButton) -> Void {
+    func requireVcodeClick(_ button: UIButton) -> Void {
         
-    }
-    
-    func registerClick(_ button: UIButton) -> Void {
+        let tag = button.tag
         
+        let requireVcodeVC = QDXRequireVcodeViewController()
+        
+        requireVcodeVC.myTag = tag
+        
+        self.navigationController?.pushViewController(requireVcodeVC, animated: true)
     }
 }
 

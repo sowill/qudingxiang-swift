@@ -40,3 +40,19 @@ let QDXHOSTURL = "https://www.qudingxiang.cn/index.php/"
  登录地址
  */
 let QDXLOGINURL = "Home/Customer/login"
+/**
+ 忘记密码登录地址
+ */
+let QDXGetLoginNURL = "Home/Customer/vcodeLogin"
+/**
+ 注册验证地址
+ */
+let QDXCreateLoginNURL = "Home/Customer/validateCode"
+/**
+ 忘记密码获取验证码地址
+ */
+let QDXGetVcodeNURL = "Home/Customer/getVcode"
+/**
+ 注册获取验证码地址
+ */
+let QDXCreateVcodeNURL = "Home/Customer/setVcode"

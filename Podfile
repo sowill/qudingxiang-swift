@@ -12,4 +12,5 @@ target 'qudingxiang-swift' do
 #    pod 'RxCocoa', '~> 3.0'
 #    pod 'RxDataSources', '~> 1.0'
 #    pod 'MJExtension'
+    pod 'Kingfisher'
 end
