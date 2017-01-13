@@ -19,6 +19,10 @@
 		457F509B1E138E7200F2AA34 /* QDXNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457F509A1E138E7200F2AA34 /* QDXNavigationViewController.swift */; };
 		457F509D1E13952700F2AA34 /* QDXTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457F509C1E13952700F2AA34 /* QDXTabBarViewController.swift */; };
 		45A2BDB71E1508B400BDE536 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45A2BDB51E1508B400BDE536 /* Main.storyboard */; };
+		45B4D5171E28BBFD00D7B211 /* AreaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4D5161E28BBFD00D7B211 /* AreaModel.swift */; };
+		45B4D51B1E28C67400D7B211 /* QDXGoodST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4D51A1E28C67400D7B211 /* QDXGoodST.swift */; };
+		45B4D51D1E28CAF800D7B211 /* QDXLineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4D51C1E28CAF800D7B211 /* QDXLineModel.swift */; };
+		45B4D51F1E28CC8600D7B211 /* QDXTopShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4D51E1E28CC8600D7B211 /* QDXTopShow.swift */; };
 		45F11A9C1E1F9CE700D1653B /* QDXLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F11A981E1F9CE700D1653B /* QDXLoginViewController.swift */; };
 		45F11A9D1E1F9CE700D1653B /* QDXUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F11A9A1E1F9CE700D1653B /* QDXUserInfo.swift */; };
 		45F11AA01E1F9CED00D1653B /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F11A9F1E1F9CED00D1653B /* SweetAlert.swift */; };
@@ -40,6 +44,10 @@
 		457F509A1E138E7200F2AA34 /* QDXNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QDXNavigationViewController.swift; sourceTree = "<group>"; };
 		457F509C1E13952700F2AA34 /* QDXTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QDXTabBarViewController.swift; sourceTree = "<group>"; };
 		45A2BDB61E1508B400BDE536 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		45B4D5161E28BBFD00D7B211 /* AreaModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaModel.swift; sourceTree = "<group>"; };
+		45B4D51A1E28C67400D7B211 /* QDXGoodST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QDXGoodST.swift; sourceTree = "<group>"; };
+		45B4D51C1E28CAF800D7B211 /* QDXLineModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QDXLineModel.swift; sourceTree = "<group>"; };
+		45B4D51E1E28CC8600D7B211 /* QDXTopShow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QDXTopShow.swift; sourceTree = "<group>"; };
 		45F11A981E1F9CE700D1653B /* QDXLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QDXLoginViewController.swift; sourceTree = "<group>"; };
 		45F11A9A1E1F9CE700D1653B /* QDXUserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QDXUserInfo.swift; sourceTree = "<group>"; };
 		45F11A9F1E1F9CED00D1653B /* SweetAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetAlert.swift; sourceTree = "<group>"; };
@@ -79,6 +87,10 @@
 		45017E731E23830E00A4E0E6 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				45B4D5161E28BBFD00D7B211 /* AreaModel.swift */,
+				45B4D51A1E28C67400D7B211 /* QDXGoodST.swift */,
+				45B4D51C1E28CAF800D7B211 /* QDXLineModel.swift */,
+				45B4D51E1E28CC8600D7B211 /* QDXTopShow.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -312,9 +324,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45B4D5171E28BBFD00D7B211 /* AreaModel.swift in Sources */,
 				45F11A9C1E1F9CE700D1653B /* QDXLoginViewController.swift in Sources */,
+				45B4D51B1E28C67400D7B211 /* QDXGoodST.swift in Sources */,
 				45017E6E1E23378B00A4E0E6 /* QDXBaseViewController.swift in Sources */,
 				457F509D1E13952700F2AA34 /* QDXTabBarViewController.swift in Sources */,
+				45B4D51D1E28CAF800D7B211 /* QDXLineModel.swift in Sources */,
+				45B4D51F1E28CC8600D7B211 /* QDXTopShow.swift in Sources */,
 				4555CD8C1E1E5C4500C7CE7F /* QDXConnect.swift in Sources */,
 				45F11AA01E1F9CED00D1653B /* SweetAlert.swift in Sources */,
 				45017E6C1E23345D00A4E0E6 /* QDXRequireVcodeViewController.swift in Sources */,

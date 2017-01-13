@@ -33,9 +33,20 @@ let QDXDarkBlue = UIColorFromRGB(rgbValue: 0x0089e3)
 let QDXLightGray = UIColorFromRGB(rgbValue: 0xd6d6d6)
 
 /**
+ 屏幕宽高
+ */
+let QDXScreenWidth = UIScreen.main.bounds.width
+
+let QDXSereenHeight = UIScreen.main.bounds.height
+
+/**
  服务器地址
  */
 let QDXHOSTURL = "https://www.qudingxiang.cn/index.php/"
+/**
+ 服务器地址
+ */
+let QDXHOSTWithURL = "https://www.qudingxiang.cn/"
 /**
  登录地址
  */
@@ -56,3 +67,8 @@ let QDXGetVcodeNURL = "Home/Customer/getVcode"
  注册获取验证码地址
  */
 let QDXCreateVcodeNURL = "Home/Customer/setVcode"
+/**
+ 获取场地列表地址
+ */
+let QDXAreaListURL = "Home/goods/getListAjaxAct"
+
