@@ -19,12 +19,14 @@ class QDXHomeViewController: QDXBaseViewController{
     var scrollView: UIScrollView!
     var pageView: UIPageControl!
     var timer: Timer?
+    var topUrlArray :Array<String> = []
+    
+    var qdxUserModel = QDXUserInfo()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         topDataRequire()
-        setUpUI()
-        addTimer()
+        
     }
     
     func topDataRequire() {
@@ -49,9 +51,12 @@ class QDXHomeViewController: QDXBaseViewController{
                     }
                     
                     areaModels.forEach({ (areaModel) in
-                        print(areaModel!.good_url)
+                        self.topUrlArray.append(areaModel!.good_url)
                     })
                     
+                    self.setUpUI()
+                    self.addTimer()
+
                 }
 
             case .failure(let error):
@@ -84,9 +89,11 @@ class QDXHomeViewController: QDXBaseViewController{
         
         do {
             /// 只使用3个UIImageView，依次设置好最后一个，第一个，第二个图片，这里面使用取模运算。
-            for index in 0..<3 {
+            for index in 0..<4 {
                 let imageView = UIImageView(frame: CGRect(x: CGFloat(index) * QDXScreenWidth, y: 0, width: QDXScreenWidth, height: 200))
-                imageView.image = UIImage(named: "\((index + 3) % 4).png")
+//                imageView.image = UIImage(named: "\((index + 3) % 4).png")
+                let url = URL(string: QDXHOSTWithURL + self.topUrlArray[index])
+                imageView.kf.setImage(with: url)
                 scrollView.addSubview(imageView)
             }
         }
@@ -151,9 +158,9 @@ class QDXHomeViewController: QDXBaseViewController{
         let nextIndex = (currentIndex + 1) % 4
         let preIndex = (currentIndex + 3) % 4
         
-        (scrollView.subviews[0] as! UIImageView).image = UIImage(named: "\(preIndex).png")
-        (scrollView.subviews[1] as! UIImageView).image = UIImage(named: "\(currentIndex).png")
-        (scrollView.subviews[2] as! UIImageView).image = UIImage(named: "\(nextIndex).png")
+        (scrollView.subviews[0] as! UIImageView).kf.setImage(with: URL(string: QDXHOSTWithURL + self.topUrlArray[preIndex]))
+        (scrollView.subviews[1] as! UIImageView).kf.setImage(with: URL(string: QDXHOSTWithURL + self.topUrlArray[currentIndex]))
+        (scrollView.subviews[2] as! UIImageView).kf.setImage(with: URL(string: QDXHOSTWithURL + self.topUrlArray[nextIndex]))
     }
 
     override func didReceiveMemoryWarning() {

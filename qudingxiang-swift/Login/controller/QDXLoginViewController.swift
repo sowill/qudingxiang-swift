@@ -22,6 +22,10 @@ class QDXLoginViewController: QDXBaseViewController {
     lazy var forgetButton = UIButton()
     lazy var registerButton = UIButton()
     
+    var QDXUserModel = QDXUserInfo()
+    
+    var window: UIWindow?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -153,11 +157,19 @@ class QDXLoginViewController: QDXBaseViewController {
                         return
                     }
                     
-                    print(userInfo.customer_name + " " + userInfo.vcode)
+//                    print(userInfo.customer_name + " " + userInfo.vcode)
                     
-                    let homeVC = QDXHomeViewController()
+                    self.QDXUserModel = userInfo
                     
-                    self.navigationController?.pushViewController(homeVC, animated: true)
+                    self.window = UIWindow()
+                    self.window?.rootViewController = QDXTabBarController()
+                    self.window?.makeKeyAndVisible()
+                    
+//                    let homeVC = QDXHomeViewController()
+                    
+//                    homeVC.qdxUserModel = self.QDXUserModel
+     
+//                    self.navigationController?.pushViewController(homeVC, animated: true)
                     
                 }
                 
