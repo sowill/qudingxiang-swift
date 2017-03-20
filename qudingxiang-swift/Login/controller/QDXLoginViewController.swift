@@ -91,7 +91,7 @@ class QDXLoginViewController: QDXBaseViewController {
         }
         
         self.view.addSubview(loginButton)
-        loginButton.backgroundColor = UIColor.lightGray
+        loginButton.backgroundColor = QDXBlue
         loginButton.setTitle("登录", for: .normal)
         loginButton.setTitleColor(UIColor.white, for: .normal)
         loginButton.addTarget(self, action: #selector(loginClick), for: .touchUpInside)
@@ -136,6 +136,7 @@ class QDXLoginViewController: QDXBaseViewController {
         
         self.view.endEditing(false)
         loginButton.isUserInteractionEnabled = false
+        loginButton.backgroundColor = QDXLightGray
         
         let parameters: Parameters = ["code" : usernameTF.text!,"password" : passwordTF.text!]
         let urlString = QDXHOSTURL + QDXLOGINURL
@@ -161,23 +162,33 @@ class QDXLoginViewController: QDXBaseViewController {
                     
                     self.QDXUserModel = userInfo
                     
+                    let first = QDXNavigationViewController.init(rootViewController: QDXHomeViewController.init())
+                    let second = QDXNavigationViewController.init(rootViewController: QDXActivityViewController.init())
+                    let third = QDXNavigationViewController.init(rootViewController: QDXOrderViewController.init())
+                    let fourth = QDXNavigationViewController.init(rootViewController: QDXMyViewController.init())
+                    
+                    let vcs = [first, second, third, fourth]
+                    
+                    let tabBarController = IRegularController(childVCs: vcs)
+                    
                     self.window = UIWindow()
-                    self.window?.rootViewController = QDXTabBarController()
+                    self.window?.rootViewController = tabBarController
                     self.window?.makeKeyAndVisible()
                     
 //                    let homeVC = QDXHomeViewController()
-                    
+//                    
 //                    homeVC.qdxUserModel = self.QDXUserModel
-     
+//     
 //                    self.navigationController?.pushViewController(homeVC, animated: true)
                     
                 }
                 
                 self.loginButton.isUserInteractionEnabled = true
-                
+                self.loginButton.backgroundColor = QDXBlue
             case .failure(let error):
                 _ = SweetAlert().showAlert("network error!", subTitle: "please check your network!", style: AlertStyle.error, buttonTitle:"Cancel")
-                
+                self.loginButton.isUserInteractionEnabled = true
+                self.loginButton.backgroundColor = QDXBlue
                 print(error)
             }
         }

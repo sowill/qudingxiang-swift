@@ -17,7 +17,6 @@
 		457F50901E138C6F00F2AA34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 457F508F1E138C6F00F2AA34 /* Assets.xcassets */; };
 		457F50931E138C6F00F2AA34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 457F50911E138C6F00F2AA34 /* LaunchScreen.storyboard */; };
 		457F509B1E138E7200F2AA34 /* QDXNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457F509A1E138E7200F2AA34 /* QDXNavigationViewController.swift */; };
-		457F509D1E13952700F2AA34 /* QDXTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457F509C1E13952700F2AA34 /* QDXTabBarViewController.swift */; };
 		45A2BDB71E1508B400BDE536 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45A2BDB51E1508B400BDE536 /* Main.storyboard */; };
 		45B4D5171E28BBFD00D7B211 /* AreaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4D5161E28BBFD00D7B211 /* AreaModel.swift */; };
 		45B4D51B1E28C67400D7B211 /* QDXGoodST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4D51A1E28C67400D7B211 /* QDXGoodST.swift */; };
@@ -30,6 +29,8 @@
 		45F11A9C1E1F9CE700D1653B /* QDXLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F11A981E1F9CE700D1653B /* QDXLoginViewController.swift */; };
 		45F11A9D1E1F9CE700D1653B /* QDXUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F11A9A1E1F9CE700D1653B /* QDXUserInfo.swift */; };
 		45F11AA01E1F9CED00D1653B /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F11A9F1E1F9CED00D1653B /* SweetAlert.swift */; };
+		45FD83351E7FC52200C4D37A /* IRegularController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FD83331E7FC52200C4D37A /* IRegularController.swift */; };
+		45FD83361E7FC52200C4D37A /* IRegularTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FD83341E7FC52200C4D37A /* IRegularTabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +47,6 @@
 		457F50921E138C6F00F2AA34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		457F50941E138C6F00F2AA34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		457F509A1E138E7200F2AA34 /* QDXNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QDXNavigationViewController.swift; sourceTree = "<group>"; };
-		457F509C1E13952700F2AA34 /* QDXTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QDXTabBarViewController.swift; sourceTree = "<group>"; };
 		45A2BDB61E1508B400BDE536 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		45B4D5161E28BBFD00D7B211 /* AreaModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaModel.swift; sourceTree = "<group>"; };
 		45B4D51A1E28C67400D7B211 /* QDXGoodST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QDXGoodST.swift; sourceTree = "<group>"; };
@@ -59,6 +59,8 @@
 		45F11A981E1F9CE700D1653B /* QDXLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QDXLoginViewController.swift; sourceTree = "<group>"; };
 		45F11A9A1E1F9CE700D1653B /* QDXUserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QDXUserInfo.swift; sourceTree = "<group>"; };
 		45F11A9F1E1F9CED00D1653B /* SweetAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetAlert.swift; sourceTree = "<group>"; };
+		45FD83331E7FC52200C4D37A /* IRegularController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRegularController.swift; sourceTree = "<group>"; };
+		45FD83341E7FC52200C4D37A /* IRegularTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRegularTabBar.swift; sourceTree = "<group>"; };
 		FDD3DE0861E2A26816AE6C10 /* Pods-qudingxiang-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-qudingxiang-swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-qudingxiang-swift/Pods-qudingxiang-swift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,7 +144,8 @@
 				457F50911E138C6F00F2AA34 /* LaunchScreen.storyboard */,
 				457F50941E138C6F00F2AA34 /* Info.plist */,
 				457F509A1E138E7200F2AA34 /* QDXNavigationViewController.swift */,
-				457F509C1E13952700F2AA34 /* QDXTabBarViewController.swift */,
+				45FD83331E7FC52200C4D37A /* IRegularController.swift */,
+				45FD83341E7FC52200C4D37A /* IRegularTabBar.swift */,
 				4543C0571E1CCDC800182E6B /* constant.swift */,
 				4555CD8B1E1E5C4500C7CE7F /* QDXConnect.swift */,
 				457F50881E138C6F00F2AA34 /* AppDelegate.swift */,
@@ -438,11 +441,12 @@
 				45B4D51B1E28C67400D7B211 /* QDXGoodST.swift in Sources */,
 				45C6E6BB1E34B77A0092617F /* Bundle+Extension.swift in Sources */,
 				45017E6E1E23378B00A4E0E6 /* QDXBaseViewController.swift in Sources */,
-				457F509D1E13952700F2AA34 /* QDXTabBarViewController.swift in Sources */,
+				45FD83361E7FC52200C4D37A /* IRegularTabBar.swift in Sources */,
 				45B4D51D1E28CAF800D7B211 /* QDXLineModel.swift in Sources */,
 				45B4D51F1E28CC8600D7B211 /* QDXTopShow.swift in Sources */,
 				4555CD8C1E1E5C4500C7CE7F /* QDXConnect.swift in Sources */,
 				45F11AA01E1F9CED00D1653B /* SweetAlert.swift in Sources */,
+				45FD83351E7FC52200C4D37A /* IRegularController.swift in Sources */,
 				45017E6C1E23345D00A4E0E6 /* QDXRequireVcodeViewController.swift in Sources */,
 				45017E761E2383AF00A4E0E6 /* QDXHomeViewController.swift in Sources */,
 				4543C0581E1CCDC800182E6B /* constant.swift in Sources */,
